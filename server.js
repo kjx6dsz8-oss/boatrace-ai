@@ -20,5 +20,14 @@ async function sendLINE(data) {
 
 // 1時間ごとに実行
 setInterval(getRaceData, 60 * 60 * 1000);
+const express = require("express");
+const app = express();
 
+app.get("/", (req, res) => {
+  res.send("BoatRace AI クラウド起動中");
+});
+
+app.listen(3000, () => {
+  console.log("Server running");
+});
 console.log("BoatRace AI クラウド起動");
